@@ -3,7 +3,7 @@ const themeConfig = require('./config/theme/')
 module.exports = {
   title: "王负剑的博客",
   description: '不要在该奋斗的年纪选择安逸，在这记录了我成长的脚步',
-  // base:'/docs/',
+  base:'/docs/',
   dest: 'public',
   head: [
     ['link', {
