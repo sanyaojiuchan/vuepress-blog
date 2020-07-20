@@ -14,6 +14,6 @@ git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io  填写你刚刚创建的仓库地址
-git push -f https://github.com/sanyaojiuchan/sanyaojiuchan.github.io.git master
+git push -f git@github.com:sanyaojiuchan/sanyaojiuchan.github.io.git master
 
 cd -
