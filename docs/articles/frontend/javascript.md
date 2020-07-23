@@ -10,7 +10,7 @@ author: 王负剑
 
 
 
-##  `const`声明
+1. ##  `const`声明
 
 const 在声明值类型数据的时候不可修改，**在不同作用域内可以修改**。**在声明引用数据类型的时候可以修改**.**(只要内存地址不变即可)**
 
@@ -25,13 +25,13 @@ const CONFIG = {}
 CONFIG.url = "123.com"
 ```
 
-const在声明引用数据类型的时候，如果不需要修改引用数据内的部分属性，可以使用**Object.freeze(引用数据类型)**来锁住。
+2. const在声明引用数据类型的时候，如果不需要修改引用数据内的部分属性，可以使用**Object.freeze(引用数据类型)**来锁住。
 
-基本量传值，引用量传址
+3. 基本量传值，引用量传址
 
-严格模式"use strict"会对当前作用域及其子作用域受影响
+4. 严格模式"use strict"会对当前作用域及其子作用域受影响
 
-内层for循环跳出外层循环时可以使用自定义标签来表示跳出位置
+5. 内层for循环跳出外层循环时可以使用自定义标签来表示跳出位置
 
 ```javascript
 jump : for(let i =1;i<=10;i++){
@@ -46,19 +46,19 @@ jump : for(let i =1;i<=10;i++){
 }
 ```
 
-for in 查询索引
+ 6. for in 查询索引
 
-for of 查询值(数组 对象 字符串 DOM节点)
+    for of 查询值(数组 对象 字符串 DOM节点)
 
-判断数据类型为基本数据类型还是引用数据类型可以使用  typeof 
+7. 判断数据类型为基本数据类型还是引用数据类型可以使用  typeof 
 
-判断数据类型为Array还是Object或者其他，可以使用   instanceof （aaa instanceof  Array  //  false）**instanceof 其实判断的是aaa.prototype**
+  判断数据类型为Array还是Object或者其他，可以使用   instanceof （aaa instanceof  Array  //  false）**instanceof 其实判断的是aaa.prototype**
 
-字符串拼接  `${表达式}啦啦啦啦${表达式}`  **模板字符串支持随意换行，可以嵌套**
+8. 字符串拼接  `${表达式}啦啦啦啦${表达式}`  **模板字符串支持随意换行，可以嵌套**
 
-trim()去掉左右空白，密码校验
+9. trim()去掉左右空白，密码校验
 
-##  字符串截取：
+10. ##  字符串截取：
 
 ```javascript
 let  aa = 'abcd.com'
@@ -67,7 +67,7 @@ aa.substring(1,3)//'bc'   第一个参数为起始位置，第二个参数为结
 aa.substr(1,3)//'bcd'  第一个参数为起始位置，第二个参数为截取长度（起始位置可以为负数）
 ```
 
-##  字符串检索：
+11. ##  字符串检索：
 
 - `lastIndexOf(searchvalue[,formindex])`  未指定formindex时，从右往左找，返回值为查找到的字符在字符串中索引值（indexOf是从左往右，返回所在索引）
 - `includes(searchvalue[,formIndex])`formindex为起始索引位置  如果当前字符串包含被搜寻的字符串，就返回 true；否则返回 false（区分大小写）
@@ -81,7 +81,7 @@ aa.lastIndexOf('b',2) // 1  第二个参数为起始位置，往前查找（未�
 aa.includes('b',2) // false 
 ```
 
-##  模糊手机号码
+12. ##  模糊手机号码
 
 ```javascript
 function phone(mobile,len = 3){
@@ -90,7 +90,7 @@ function phone(mobile,len = 3){
 phone('987654321011',5)
 ```
 
-##  数据类型转换
+13. ##  数据类型转换
 
 ```javascript
 //number转换成string
@@ -109,18 +109,18 @@ let arr = ['aaa','bbbb']
 arr.join('|') // 'aaa|bbbb'
 ```
 
-##  修改对象原型
+14. ##  修改对象原型
 
 - **OLD**			 `Object.prototype.__proto__`
 - **NEW** 			`Object.setPrototypeOf(obj,prototype)`   (obj:要设置其原型的对象，prototype：该对象的新原型)
 
-##  对象转换数组
+15. ##  对象转换数组
 
 - `Object.keys(obj)`   *方法会返回一个由一个给定对象的自身可枚举**属性**组成的数组*
 - `Object.values(obj)`   *方法会返回一个由一个给定对象的自身可枚举**属性值**组成的数组*
 - `Object.entries(obj)`   *返回一个给定对象自身可枚举属性的键值对数组*
 
-##  对象浅拷贝
+16. ##  对象浅拷贝
 
 ```javascript
 let obj1 = {name:'ms',age:18 }
@@ -145,7 +145,7 @@ console.log(JSON.stringify(obj1)+'-obj1');
 console.log(JSON.stringify(obj4)+'-obj4');
 ```
 
-##  对象深拷贝（递归）
+17. ##  对象深拷贝（递归）
 
 ```javascript
 let obj1 = {
@@ -204,13 +204,13 @@ function deepClone(obj) {
 
 
 
-##  声明对象
+18. ##  声明对象
 
 - 字面量声明		`let obj = {}`
 - 工厂函数  `function user(){return {...}}`
 - 构造函数  `function User(){}   let obj = new User()`
 
-##  对象访问器
+19. ##  对象访问器
 
 - **JavaScript Getter（get 关键词）**
 
@@ -239,7 +239,7 @@ function deepClone(obj) {
   console.log(person.language) //cn
   ```
 
-##  数据双向绑定
+20. ##  数据双向绑定
 
 ```javascript
 <body>
@@ -279,7 +279,7 @@ function deepClone(obj) {
 </body>
 ```
 
-##  类静态属性
+21.  ##  类静态属性
 
 ​	如果类的属性是为每一个对象使用的，而不是为某一个对象独享，可以使用静态属性
 
@@ -292,7 +292,7 @@ class User{
 }
 ```
 
-##  构造函数中得静态方法和一般方法区别  *类中使用static来声明静态属性和方法*
+22. ##  构造函数中得静态方法和一般方法区别  *类中使用static来声明静态属性和方法*
 
 ````
 function User(){}
@@ -300,7 +300,7 @@ User.__proto__.show = function(){}  //静态方法
 User.prototype.show = function(){}	//一般方法
 ````
 
-##  保护类中的保护属性和私有属性
+23. ##  保护类中的保护属性和私有属性
 
 - 使用命名规范_arg来声明保护属性
 
@@ -378,7 +378,7 @@ User.prototype.show = function(){}	//一般方法
           console.log(u);
   ```
 
- ##  模块按需加载
+24.  ##  模块按需加载
 
   ```
   document.querySelector("button").addEventListener("click",()=>{
@@ -391,7 +391,7 @@ User.prototype.show = function(){}	//一般方法
 
   
 
-##  JS中常用数据类型
+25. ##  JS中常用数据类型
 
 - 基本数据类型
 
@@ -425,11 +425,11 @@ User.prototype.show = function(){}	//一般方法
     - Date 日期对象
   - 函数数据类型function
 
-##  `JS`中数据比较流程
+26. ##  `JS`中数据比较流程
 
 ![数据类型判断](/frontendpic/数据类型判断.jpg)
 
-##  栈堆内存
+27. ##  栈堆内存
 
 -  基本数据类型的值直接存储在当前的作用域下
 
@@ -440,7 +440,7 @@ User.prototype.show = function(){}	//一般方法
 -  堆内存：用来存储引用类型中的信息值。（对象存储的是键值对，函数存储的是代码字符串）
 
 
-##  Promise
+28. ##  Promise
 
 ​		pending（准备状态）
 
@@ -482,6 +482,45 @@ Promise.all([p1,p2,p3]).then((res)=>{
 })
 ```
 
-##  `Form`表单
+29. ##  `Form`表单
 
 - `<label for="ye"><input id="ye" type="checkbox" />文本</label>`点击标签中的文本，可使多选框聚焦
+  
+30. ##  JS自动触发事件&&自定义事件
+    类似于Vue中的`$on` 和 `$emit`
+    流程:  `creatEvent`------`initEvent`------`dispatchEvent`
+    + **第一步,指定事件类型**
+      eventType共有5种类型：
+      + Events: 包括所有的事件.
+      + HTMLEvents: 'abort', 'blur', 'change', 'error', 'focus', 'load', 'reset', 'resize', 'scroll', 'select', 'submit', 'unload'.
+
+      + UIEevents: 'DOMActivate', 'DOMFocusIn', 'DOMFocusOut', 'keydown', 'keypress', 'keyup'.
+
+      + MouseEvents: 'click', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup'.
+
+      + MutationEvents: 'DOMAttrModified', 'DOMNodeInserted', 'DOMNodeRemoved','DOMCharacterDataModified','DOMNodeInsertedIntoDocument', 'DOMNodeRemovedFromDocument', 'DOMSubtreeModified'.
+    + **第二步,初始化**
+      + HTMLEvents 和 通用 Events：
+            initEvent( 'type', bubbles, cancelable )
+      + UIEvents ：
+             initUIEvent( 'type', bubbles, cancelable, windowObject, detail )
+      + MouseEvents：
+             initMouseEvent( 'type', bubbles, cancelable, windowObject, detail, screenX, screenY,
+                      clientX, clientY, ctrlKey, altKey, shiftKey, metaKey, button, relatedTarget )
+      + MutationEvents ：
+              initMutationEvent( 'type', bubbles, cancelable, relatedNode, prevValue, newValue,  attrName, attrChange )
+    + **第三步,触发自定义事件**
+          targetObj.dispatchEvent(event)使targetObj对象的event事件触发 需要注意的是在IE 5.5+版本上请用fireEvent方法
+        ```
+        <button id="btn">button</button>
+        //例子:自动触发button的click事件
+        let btn = document.querySelector('#btn');
+        btn.addEventListener('click',()=>alert('btn---click'))
+        //指定事件类型为MouseEvent
+        let btnEvent = document.createEvent('MouseEvent')
+        // initEvent接受3个参数：
+        // 事件类型，是否冒泡，是否阻止浏览器的默认行为
+        btnEvent.initEvent('click',false,true)
+        //触发button上绑定的click事件
+        btn.dispatchEvent(btnEvent)
+        ```
